@@ -3,16 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>X Series Pitches</title>
+    <title>Create your X Series resource pitch!</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         text-align: center;
         padding: 50px;
       }
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
-    <h1>X Series Pitches</h1>
+    <h1>Create your X Series resource pitch!</h1>
+    <button id="xseriesEducationBtn">X Series Education Resources</button>
+    <button id="xseriesBioMedBtn">X Series BioMed Resources</button>
+    <button id="xseriesTestingBtn">X Series Testing Resources</button>
+    <button id="xseriesVideoBtn">X Series Video Resources</button>
+    <button id="xseriesGenericBtn">X Series Resource Link</button>
+    <script>
+      document
+        .getElementById("xseriesEducationBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=xseries-education";
+        });
+      document
+        .getElementById("xseriesBioMedBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=xseries-biomed";
+        });
+      document
+        .getElementById("xseriesTestingBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=xseries-testing";
+        });
+      document
+        .getElementById("xseriesVideoBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=xseries-video";
+        });
+      document
+        .getElementById("xseriesGenericBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=xseries-resourcelink";
+        });
+    </script>
   </body>
 </html>

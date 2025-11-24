@@ -31,10 +31,22 @@ let QR_SIZE_PX, QR_X_PX, QR_Y_PX;
 if (!type) {
   alert("Invalid access. Please navigate from the resource page.");
 } else {
-  if (type.startsWith("rseries-plus")) {
+  if (type.startsWith("autopulsenxt")) {
+    QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for AutoPulseNXT
+    QR_X_PX = Math.round(116.54 * MM_TO_PX);
+    QR_Y_PX = Math.round(67.71 * MM_TO_PX);
+  } else if (type.startsWith("xseries")) {
+    QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for X Series
+    QR_X_PX = Math.round(141.99 * MM_TO_PX);
+    QR_Y_PX = Math.round(78.96 * MM_TO_PX);
+  } else if (type.startsWith("rseries-plus")) {
     QR_SIZE_PX = Math.round(105 * MM_TO_PX); // 105mm for PLUS
     QR_X_PX = Math.round(16.62 * MM_TO_PX);
     QR_Y_PX = Math.round(94.56 * MM_TO_PX);
+  } else if (type.startsWith("internalpaddles")) {
+    QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for Internal Paddles
+    QR_X_PX = Math.round(124.08 * MM_TO_PX);
+    QR_Y_PX = Math.round(85.65 * MM_TO_PX);
   } else {
     QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for ALS
     QR_X_PX = Math.round(146.78 * MM_TO_PX);
@@ -101,6 +113,9 @@ generateBtn.addEventListener("click", () => {
   // Clear and draw background
   ctx.clearRect(0, 0, BG_WIDTH_PX, BG_HEIGHT_PX);
   ctx.drawImage(bgImage, 0, 0, BG_WIDTH_PX, BG_HEIGHT_PX);
+  // Draw white background for QR area to avoid lines from background showing through
+  ctx.fillStyle = "white";
+  ctx.fillRect(QR_X_PX, QR_Y_PX, QR_SIZE_PX, QR_SIZE_PX);
   // Overlay QR code on top
   ctx.drawImage(qrCanvas, QR_X_PX, QR_Y_PX);
   // Show download button

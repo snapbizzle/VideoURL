@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create your Accessories & Consumables resource pitch!</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Create your Accessories & Consumables resource pitch!</h1>
+    <button id="internalPaddlesIntegratedBtn">
+      Internal Paddles | Integrated
+    </button>
+    <button id="internalPaddlesNonIntegratedBtn">
+      Internal Paddles | Non-Integrated
+    </button>
+    <script>
+      document
+        .getElementById("internalPaddlesIntegratedBtn")
+        .addEventListener("click", () => {
+          window.location.href =
+            "flyer.html?type=internalpaddles-integrated-resourcelink";
+        });
+      document
+        .getElementById("internalPaddlesNonIntegratedBtn")
+        .addEventListener("click", () => {
+          window.location.href = "comingsoon.html";
+        });
+    </script>
+  </body>
+</html>

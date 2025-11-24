@@ -3,16 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AutoPulseNXT Pitches</title>
+    <title>Create your AutoPulseNXT resource pitch!</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         text-align: center;
         padding: 50px;
       }
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
-    <h1>AutoPulseNXT Pitches</h1>
+    <h1>Create your AutoPulseNXT resource pitch!</h1>
+    <button id="autopulsenxtEducationBtn">
+      AutoPulseNXT Education Resources
+    </button>
+    <button id="autopulsenxtBioMedBtn">AutoPulseNXT BioMed Resources</button>
+    <button id="autopulsenxtVideoBtn">BioMed Video Resources</button>
+    <button id="autopulsenxtGenericBtn">AutoPulseNXT Resource Link</button>
+    <script>
+      document
+        .getElementById("autopulsenxtEducationBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=autopulsenxt-education";
+        });
+      document
+        .getElementById("autopulsenxtBioMedBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=autopulsenxt-biomed";
+        });
+      document
+        .getElementById("autopulsenxtVideoBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=autopulsenxt-video";
+        });
+      document
+        .getElementById("autopulsenxtGenericBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=autopulsenxt-resourcelink";
+        });
+    </script>
   </body>
 </html>
