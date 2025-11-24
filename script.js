@@ -2,9 +2,6 @@
 const MM_TO_PX = 96 / 25.4; // ≈3.7795
 const BG_WIDTH_PX = Math.round(268.05 * MM_TO_PX); // 1014
 const BG_HEIGHT_PX = Math.round(215.65 * MM_TO_PX); // 815
-const QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 416
-const QR_X_PX = Math.round(146.78 * MM_TO_PX); // 555
-const QR_Y_PX = Math.round(79.69 * MM_TO_PX); // 301
 
 // Get elements
 const urlInput = document.getElementById("urlInput");
@@ -28,9 +25,22 @@ const bgImage = new Image();
 
 // Load background image based on type parameter
 const type = getUrlParameter("type");
+// Set QR dimensions based on type
+let QR_SIZE_PX, QR_X_PX, QR_Y_PX;
+
 if (!type) {
   alert("Invalid access. Please navigate from the resource page.");
 } else {
+  if (type.startsWith("rseries-plus")) {
+    QR_SIZE_PX = Math.round(105 * MM_TO_PX); // 105mm for PLUS
+    QR_X_PX = Math.round(16.62 * MM_TO_PX);
+    QR_Y_PX = Math.round(94.56 * MM_TO_PX);
+  } else {
+    QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for ALS
+    QR_X_PX = Math.round(146.78 * MM_TO_PX);
+    QR_Y_PX = Math.round(79.69 * MM_TO_PX);
+  }
+
   bgImage.src = "./images/" + type + ".png";
   bgImage.onload = () => {
     // Background image loaded

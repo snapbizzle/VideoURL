@@ -3,17 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>R Series PLUS Resources</title>
+    <title>Create your R Series PLUS resource pitch!</title>
     <style>
       body {
         font-family: Arial, sans-serif;
         text-align: center;
         padding: 50px;
       }
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
-    <h1>R Series PLUS Resources</h1>
-    <p>Coming soon...</p>
+    <h1>Create your R Series PLUS resource pitch!</h1>
+    <button id="plusVideoBtn">R Series PLUS Video Resources</button>
+    <button id="plusBioMedBtn">R Series PLUS BioMed Resources</button>
+    <button id="plusTestingBtn">R Series PLUS Testing Resources</button>
+    <button id="plusEducationBtn">R Series PLUS Education Resources</button>
+    <button id="plusGenericBtn">R Series PLUS "Generic" Resource Link</button>
+    <script>
+      document.getElementById("plusVideoBtn").addEventListener("click", () => {
+        window.location.href = "flyer.html?type=rseries-plus-video";
+      });
+      document.getElementById("plusBioMedBtn").addEventListener("click", () => {
+        window.location.href = "flyer.html?type=rseries-plus-biomed";
+      });
+      document
+        .getElementById("plusTestingBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=rseries-plus-testing";
+        });
+      document
+        .getElementById("plusEducationBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=rseries-plus-education";
+        });
+      document
+        .getElementById("plusGenericBtn")
+        .addEventListener("click", () => {
+          window.location.href = "flyer.html?type=rseries-plus-resourcelink";
+        });
+    </script>
   </body>
 </html>
