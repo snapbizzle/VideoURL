@@ -1,0 +1,177 @@
+/* ZOLL-Linkz Global Styles */
+
+/* CSS Custom Properties for Theming */
+:root {
+  --primary-color: #0675cd;
+  --primary-hover: #055baa;
+  --primary-focus: #044f94;
+  --text-color: #333;
+  --background-color: #ffffff;
+  --border-radius: 8px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --transition: all 0.2s ease;
+}
+
+/* Global Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 90.609px 30px 30px;
+  text-align: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60.609px;
+  background-color: var(--primary-color);
+  width: 100%;
+  z-index: 1000;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.header-logo {
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: auto;
+}
+
+.breadcrumb {
+  padding: 0px 0;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.breadcrumb a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Modern Button Styling */
+button {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  min-width: 120px;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus {
+  outline: 2px solid var(--primary-focus);
+  outline-offset: 2px;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+/* Form elements styling */
+input[type="url"] {
+  font-size: 16px;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 400px;
+  margin: 16px 0;
+  transition: var(--transition);
+}
+
+input[type="url"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(6, 117, 205, 0.1);
+}
+
+/* Specific styles for flyer page */
+#downloadBtn {
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    height: 49.01px;
+    padding: 0;
+  }
+
+  .header-logo {
+    width: 100px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  body {
+    padding: 69.01px 20px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  #downloadBtn {
+    margin: 15px auto;
+  }
+}

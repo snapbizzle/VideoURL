@@ -20,6 +20,58 @@ function getUrlParameter(name) {
   return url.searchParams.get(name);
 }
 
+// Function to get resource label from subtype
+function getResourceLabel(subtype) {
+  switch (subtype) {
+    case "video":
+      return "Video Resources";
+    case "biomed":
+      return "BioMed Resources";
+    case "testing":
+      return "Testing Resources";
+    case "education":
+      return "Education Resources";
+    case "resourcelink":
+      return "General Resources";
+    default:
+      return "Resources";
+  }
+}
+
+// Function to generate breadcrumb
+function getBreadcrumbFromType(type) {
+  if (!type) return "";
+
+  let category, page;
+
+  if (type.startsWith("autopulsenxt")) {
+    category = "AutoPulseNXT";
+    page = "autopulsenxt.html";
+  } else if (type.startsWith("xseries")) {
+    category = "X Series";
+    page = "xseries.html";
+  } else if (type.startsWith("rseries-plus")) {
+    category = "R Series PLUS";
+    page = "rseries-plus.html";
+  } else if (type.startsWith("rseries-als")) {
+    category = "R Series ALS";
+    page = "rseries-als.html";
+  } else if (type.startsWith("internalpaddles")) {
+    category = "Accessories & Consumables";
+    page = "accessories.html";
+  } else {
+    // default to accessories
+    category = "Accessories & Consumables";
+    page = "accessories.html";
+  }
+
+  // Get the resource subtype (last part after '-')
+  const subtype = type.split("-").pop();
+  const resourceLabel = getResourceLabel(subtype);
+
+  return `<a href="index.html">Home</a> > <a href="${page}">${category}</a> > ${resourceLabel}`;
+}
+
 // Load background image
 const bgImage = new Image();
 
@@ -60,6 +112,12 @@ if (!type) {
   bgImage.onerror = () => {
     alert("Background image not found for type: " + type);
   };
+
+  // Generate and set breadcrumb
+  const breadcrumbEl = document.getElementById("breadcrumb");
+  if (breadcrumbEl) {
+    breadcrumbEl.innerHTML = getBreadcrumbFromType(type);
+  }
 
   // If image is already loaded, trigger onload
   if (bgImage.complete) bgImage.onload();

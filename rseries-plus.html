@@ -4,26 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create your R Series PLUS resource pitch!</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 50px;
-      }
-      button {
-        font-size: 18px;
-        padding: 10px 20px;
-        margin: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Create our R Series PLUS flyer/pitch!</h1>
-    <button id="plusVideoBtn">R Series PLUS Video Resources</button>
-    <button id="plusBioMedBtn">R Series PLUS BioMed Resources</button>
-    <button id="plusTestingBtn">R Series PLUS Testing Resources</button>
-    <button id="plusEducationBtn">R Series PLUS Education Resources</button>
-    <button id="plusGenericBtn">R Series PLUS "Generic" Resource Link</button>
+    <header class="header">
+      <img src="logo-zoll-w.png" alt="ZOLL Logo" class="header-logo" />
+    </header>
+    <nav class="breadcrumb"><a href="index.html">Home</a> > R Series PLUS</nav>
+    <h1>Choose the Flyer/Pitch Type:</h1>
+    <button id="plusVideoBtn">Video Resources</button>
+    <button id="plusBioMedBtn">BioMed Resources</button>
+    <button id="plusTestingBtn">Testing Resources</button>
+    <button id="plusEducationBtn">Education Resources</button>
+    <button id="plusGenericBtn">General Resources</button>
     <script>
       document.getElementById("plusVideoBtn").addEventListener("click", () => {
         window.location.href = "flyer.html?type=rseries-plus-video";

@@ -4,26 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create your R Series resource pitch!</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 50px;
-      }
-      button {
-        font-size: 18px;
-        padding: 10px 20px;
-        margin: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Create your R Series ALS flyer/pitch!</h1>
-    <button id="alsVideoBtn">R Series ALS Video Resources</button>
-    <button id="alsBioMedBtn">R Series ALS BioMed Resources</button>
-    <button id="alsTestingBtn">R Series ALS Testing Resources</button>
-    <button id="alsEducationBtn">R Series ALS Education Resources</button>
-    <button id="alsGenericBtn">R Series ALS "Generic" Resource Link</button>
+    <header class="header">
+      <img src="logo-zoll-w.png" alt="ZOLL Logo" class="header-logo" />
+    </header>
+    <nav class="breadcrumb"><a href="index.html">Home</a> > R Series ALS</nav>
+    <h1>Choose the Flyer/Pitch Type:</h1>
+    <button id="alsVideoBtn">Video Resources</button>
+    <button id="alsBioMedBtn">BioMed Resources</button>
+    <button id="alsTestingBtn">Testing Resources</button>
+    <button id="alsEducationBtn">Education Resources</button>
+    <button id="alsGenericBtn">General Resources</button>
     <script>
       document.getElementById("alsVideoBtn").addEventListener("click", () => {
         window.location.href = "flyer.html?type=rseries-als-video";
