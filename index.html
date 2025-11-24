@@ -19,11 +19,27 @@
   </head>
   <body>
     <h1>Pitch Resource Generator</h1>
-    <button id="rseriesBtn">R Series Pitches</button>
+    <button id="rseriesAlsBtn">R Series ALS</button>
+    <button id="rseriesPlusBtn">R Series PLUS</button>
+    <button id="xseriesBtn">X Series Pitches</button>
+    <button id="autopulsenxtBtn">AutoPulseNXT Pitches</button>
     <script>
-      document.getElementById("rseriesBtn").addEventListener("click", () => {
-        window.location.href = "rseries.html";
+      document.getElementById("rseriesAlsBtn").addEventListener("click", () => {
+        window.location.href = "rseries-als.html";
       });
+      document
+        .getElementById("rseriesPlusBtn")
+        .addEventListener("click", () => {
+          window.location.href = "rseries-plus.html";
+        });
+      document.getElementById("xseriesBtn").addEventListener("click", () => {
+        window.location.href = "xseries.html";
+      });
+      document
+        .getElementById("autopulsenxtBtn")
+        .addEventListener("click", () => {
+          window.location.href = "autopulsenxt.html";
+        });
     </script>
   </body>
 </html>
