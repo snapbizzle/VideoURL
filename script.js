@@ -150,7 +150,7 @@ generateBtn.addEventListener("click", () => {
   }
 
   // Generate QR code first
-  const qr = new qrcode(0, "M");
+  const qr = new qrcode(0, "L");
   qr.addData(url);
   qr.make();
   const size = qr.getModuleCount();
