@@ -62,6 +62,9 @@ function getBreadcrumbFromType(type) {
   } else if (type.startsWith("aed3bls")) {
     category = "AED 3 BLS";
     page = "aed3bls.html";
+  } else if (type.startsWith("aedplus")) {
+    category = "AED Plus";
+    page = "aedplus.html";
   } else {
     // default to accessories
     category = "Accessories & Consumables";
@@ -106,6 +109,10 @@ if (!type) {
     QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for AED 3 BLS
     QR_X_PX = Math.round(128.65 * MM_TO_PX);
     QR_Y_PX = Math.round(66.89 * MM_TO_PX);
+  } else if (type.startsWith("aedplus")) {
+    QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for AED Plus
+    QR_X_PX = Math.round(128.68 * MM_TO_PX);
+    QR_Y_PX = Math.round(71.74 * MM_TO_PX);
   } else {
     QR_SIZE_PX = Math.round(110 * MM_TO_PX); // 110mm for ALS
     QR_X_PX = Math.round(146.78 * MM_TO_PX);
